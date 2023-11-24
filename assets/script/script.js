@@ -1,7 +1,8 @@
 var User = /** @class */ (function () {
-    function User() {
+    function User(_userName) {
         this.carica = 0;
         this.numeroChiamate = 0;
+        this.userName = _userName;
     }
     User.prototype.ricarica = function (unaRicarica) {
         this.carica += unaRicarica;
@@ -27,9 +28,9 @@ var User = /** @class */ (function () {
     };
     return User;
 }());
-var FirstUser = new User();
-var SecondUser = new User();
-var ThirdUser = new User();
+var FirstUser = new User("Alessia");
+var SecondUser = new User("Mauro");
+var ThirdUser = new User("Lucia");
 //First User
 FirstUser.ricarica(20);
 FirstUser.chiamata(8);
@@ -54,3 +55,11 @@ console.log("Saldo residuo: ".concat(ThirdUser.numero404(), "\u20AC"));
 console.log("Numero di chiamate effettuate: ".concat(ThirdUser.getNumeroChiamate(), " "));
 ThirdUser.azzeraChiamate();
 console.log("Numero di chiamate azzerate: ".concat(ThirdUser.getNumeroChiamate(), " "));
+var divMain = document.querySelector(".divMain");
+var h1 = document.querySelector(".greet");
+h1.innerText = "Ciao ".concat(FirstUser.userName, " !");
+divMain.appendChild(h1);
+var divSaldo = document.querySelector(".saldo");
+var pSaldo = document.querySelector(".saldo > p");
+pSaldo.innerText = "Saldo residuo ".concat(FirstUser.numero404(), "\u20AC");
+divSaldo.appendChild(pSaldo);

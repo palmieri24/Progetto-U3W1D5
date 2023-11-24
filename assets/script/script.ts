@@ -1,4 +1,5 @@
 interface Smartphone {
+  userName: string;
   ricarica(unaRicarica: number): void;
   chiamata(minutiDurata: number): void;
   numero404(): number;
@@ -7,12 +8,14 @@ interface Smartphone {
 }
 
 class User implements Smartphone {
+  userName: string;
   private carica: number;
   private numeroChiamate: number;
 
-  constructor() {
+  constructor(_userName: string) {
     this.carica = 0;
     this.numeroChiamate = 0;
+    this.userName = _userName;
   }
 
   ricarica(unaRicarica: number): void {
@@ -42,9 +45,9 @@ class User implements Smartphone {
   }
 }
 
-const FirstUser: Smartphone = new User();
-const SecondUser: Smartphone = new User();
-const ThirdUser: Smartphone = new User();
+const FirstUser: Smartphone = new User("Alessia");
+const SecondUser: Smartphone = new User("Mauro");
+const ThirdUser: Smartphone = new User("Lucia");
 //First User
 FirstUser.ricarica(20);
 FirstUser.chiamata(8);
@@ -69,3 +72,17 @@ console.log(`Saldo residuo: ${ThirdUser.numero404()}€`);
 console.log(`Numero di chiamate effettuate: ${ThirdUser.getNumeroChiamate()} `);
 ThirdUser.azzeraChiamate();
 console.log(`Numero di chiamate azzerate: ${ThirdUser.getNumeroChiamate()} `);
+
+const divMain = document.querySelector(".divMain") as HTMLBodyElement;
+const h1 = document.querySelector(".greet") as HTMLBodyElement;
+h1.innerText = `Ciao ${FirstUser.userName} !`;
+
+divMain!.appendChild(h1);
+
+const divSaldo = document.querySelector(".saldo") as HTMLBodyElement;
+const pSaldo = document.querySelector(".saldo > p") as HTMLBodyElement;
+pSaldo.innerText = `Saldo residuo ${FirstUser.numero404()}€`;
+
+divSaldo!.appendChild(pSaldo);
+
+const btnRicarica = document.querySelector(".btnRicarica") as HTMLButtonElement;

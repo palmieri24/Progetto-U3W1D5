@@ -1,0 +1,21 @@
+body {
+  box-sizing: border-box;
+}
+
+.nav-item span {
+  font-size: 13px;
+}
+
+.nav-item i {
+  font-size: 20px;
+}
+
+.saldo i {
+  font-size: 20px;
+
+  color: rgb(186, 184, 184);
+}
+
+.saldo > p {
+  color: rgb(99, 94, 94);
+}
