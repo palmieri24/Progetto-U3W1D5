@@ -1,7 +1,4 @@
 interface Smartphone {
-  carica: number;
-  numeroChiamate: number;
-
   ricarica(unaRicarica: number): void;
   chiamata(minutiDurata: number): void;
   numero404(): number;
@@ -10,8 +7,13 @@ interface Smartphone {
 }
 
 class User implements Smartphone {
-  carica: number = 0;
-  numeroChiamate: number = 0;
+  private carica: number;
+  private numeroChiamate: number;
+
+  constructor() {
+    this.carica = 0;
+    this.numeroChiamate = 0;
+  }
 
   ricarica(unaRicarica: number): void {
     this.carica += unaRicarica;

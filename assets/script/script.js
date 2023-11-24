@@ -30,6 +30,7 @@ var User = /** @class */ (function () {
 var FirstUser = new User();
 var SecondUser = new User();
 var ThirdUser = new User();
+//First User
 FirstUser.ricarica(20);
 FirstUser.chiamata(8);
 FirstUser.chiamata(2);
@@ -37,3 +38,19 @@ console.log("Saldo residuo: ".concat(FirstUser.numero404(), "\u20AC"));
 console.log("Numero di chiamate effettuate: ".concat(FirstUser.getNumeroChiamate(), " "));
 FirstUser.azzeraChiamate();
 console.log("Numero di chiamate azzerate: ".concat(FirstUser.getNumeroChiamate(), " "));
+//Second User
+SecondUser.ricarica(10);
+SecondUser.chiamata(3);
+SecondUser.chiamata(4);
+console.log("Saldo residuo: ".concat(SecondUser.numero404(), "\u20AC"));
+console.log("Numero di chiamate effettuate: ".concat(ThirdUser.getNumeroChiamate(), " "));
+ThirdUser.azzeraChiamate();
+console.log("Numero di chiamate azzerate: ".concat(ThirdUser.getNumeroChiamate(), " "));
+//Third User
+ThirdUser.ricarica(50);
+ThirdUser.chiamata(25);
+ThirdUser.chiamata(6);
+console.log("Saldo residuo: ".concat(ThirdUser.numero404(), "\u20AC"));
+console.log("Numero di chiamate effettuate: ".concat(ThirdUser.getNumeroChiamate(), " "));
+ThirdUser.azzeraChiamate();
+console.log("Numero di chiamate azzerate: ".concat(ThirdUser.getNumeroChiamate(), " "));
